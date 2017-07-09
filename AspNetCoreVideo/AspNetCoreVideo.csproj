@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <UserSecretsId>35960ce3-e87b-4952-ac59-fcab1fdf0909</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,12 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.2" />
+   <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.1-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
