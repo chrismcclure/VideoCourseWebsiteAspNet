@@ -34,6 +34,7 @@ namespace AspNetCoreVideo
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IMessageService, ConfigurationMessageService>();
+            services.AddSingleton<IVideoData, MockVideoData>();
 
         }
 

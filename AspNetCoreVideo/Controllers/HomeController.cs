@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AspNetCoreVideo.Services;
+using AspNetCoreVideo.Entities;
+using AspNetCoreVideo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,10 +11,66 @@ namespace AspNetCoreVideo.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: /<controller>/
-        public string Index()
+        private IVideoData _videos;
+
+        public HomeController(IVideoData videos)
         {
-            return "Hello from the controller";
+            _videos = videos;
+        }
+
+        // GET: /<controller>/
+        public ViewResult Index()
+        {
+            var model = _videos.GetAll().Select( video =>
+            new VideoViewModel
+            {
+                Id = video.Id,
+                Title = video.Title,
+                Genre = video.Genre.ToString()
+            });            
+            return View(model);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var model = _videos.Get(id);
+
+            if (model == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(new VideoViewModel
+            {
+                Id = model.Id,
+                Title= model.Title,
+                Genre = model.Genre.ToString()
+            });
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Video model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var video = new Video
+                {
+                    Title = model.Title,
+                    Genre = model.Genre
+                };
+                _videos.Add(video);
+
+                return RedirectToAction("Details", new { id = video.Id });
+            }
+
+            return View();
         }
     }
 }

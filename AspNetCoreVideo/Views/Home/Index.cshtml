@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AspNetCoreVideo.ViewModels.VideoViewModel>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Video</title>
+</head>
+<body>
+    @Html.ActionLink("Create", "Create")
+    <table>
+        @foreach (var video in @Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(video.Id.ToString() + "Details", "Details", new  { id = video.Id })
+            </td>
+            <td>Id: @video.Id </td> 
+            <td> Title: @video.Title</td>
+            <td>Genre: @video.Genre</td>
+        </tr>
+        }         
+    </table>
+</body>
+</html>
+      
