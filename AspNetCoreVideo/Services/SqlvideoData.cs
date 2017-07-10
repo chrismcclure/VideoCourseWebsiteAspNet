@@ -19,7 +19,7 @@ namespace AspNetCoreVideo.Services
         public void Add(Video newVideo)
         {
             _db.Add(newVideo);
-            _db.SaveChanges();
+            Commit();
         }
 
         public Video Get(int id)
@@ -31,5 +31,12 @@ namespace AspNetCoreVideo.Services
         {
             return _db.Videos;
         }
+
+        public int Commit()
+        {
+            return _db.SaveChanges();
+        }
+
+
     }
 }

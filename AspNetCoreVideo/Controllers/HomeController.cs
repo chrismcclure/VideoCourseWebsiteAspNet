@@ -4,6 +4,7 @@ using AspNetCoreVideo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using AspNetCoreVideo.ViewModel;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -66,11 +67,44 @@ namespace AspNetCoreVideo.Controllers
                     Genre = model.Genre
                 };
                 _videos.Add(video);
-
+                _videos.Commit();
                 return RedirectToAction("Details", new { id = video.Id });
             }
 
             return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var video = _videos.Get(id);
+
+            if (video == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(video);          
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(int id, Video model)
+        {
+            var video = _videos.Get(id);
+
+            if (video == null  || !ModelState.IsValid)
+            {
+                return View(model);            
+            }
+            video.Title = model.Title;
+            video.Genre = model.Genre;
+            video.Id = model.Id;
+
+            _videos.Commit();
+
+            return RedirectToAction("Details", new { id = model.Id });
         }
     }
 }

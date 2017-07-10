@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreVideo.ViewModel
 {
-    public class Entities
-    {
+    public class VideoEditViewModel
+    {    
+            public int Id { get; set; }
 
-        public int Id { get; set; }
+            [Required, MinLength(3), MaxLength(80)]
+            public string Title { get; set; }
 
-        [Required, MinLength(3), MaxLength(80)]
-        public string Title { get; set; }
-
-        [Display(Name = "Film Genre")]
-        public Genres Genre { get; set; }
+            [Display(Name = "Film Genre")]
+            public Genres Genre { get; set; }        
     }
 }

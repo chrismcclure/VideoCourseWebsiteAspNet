@@ -1,28 +1,27 @@
-﻿@model VideoEditViewModel
+﻿@model Video
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = $"Edit {Model.Title}";
 }
 
 
-<h2>Create Video</h2>
-<form action="Create" method="post">
+<h2>@ViewBag.Title</h2>
+<form action="Edit" method="post">
     <div asp-validation-summary="All"></div>
     <table>
         <tr>
-            <td><label asp-for="Title"></label></td>   
-            <td><input asp-for="Title"/></td>
+            <td><label asp-for="Title"></label></td>
+            <td><input asp-for="Title" /></td>
             <td><span asp-validation-for="Title"></span></td>
         </tr>
         <tr>
             <td><label asp-for="Genre"></label></td>
-            <td><select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genres>()"></select></td>   
+            <td><select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genres>()"></select></td>
             <td><span asp-validation-for="Genre"></span></td>
-
         </tr>
     </table>
-
-    <input type="submit"  value="Create" />
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="submit" value="Edit" />
 </form>
 
 <div>
