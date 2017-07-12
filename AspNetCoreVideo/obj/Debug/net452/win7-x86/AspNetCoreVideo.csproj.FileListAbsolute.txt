@@ -207,7 +207,13 @@ C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\System.Text.Encodings.Web.dll
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\System.Threading.Tasks.Extensions.dll
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\AspNetCoreVideo.csproj.AspNetCoreVideo.exe.config
-C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\UserSecretsAssemblyInfo.cs
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\AspNetCoreVideo.AssemblyInfo.cs
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\AspNetCoreVideo.exe
 C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\AspNetCoreVideo.pdb
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\AspNetCoreVideo.csprojResolveAssemblyReference.cache
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\obj\Debug\net452\win7-x86\UserSecretsAssemblyInfo.cs
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\Microsoft.AspNetCore.Authentication.dll
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\Microsoft.AspNetCore.Identity.dll
+C:\Users\chris_000\Desktop\Video Course Website\AspNetCoreVideo\bin\Debug\net452\win7-x86\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

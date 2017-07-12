@@ -12,6 +12,8 @@ using System.IO;
 using AspNetCoreVideo.Services;
 using AspNetCoreVideo.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using AspNetCoreVideo.Entities;
 
 namespace AspNetCoreVideo
 {
@@ -44,6 +46,7 @@ namespace AspNetCoreVideo
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IMessageService, ConfigurationMessageService>();
             services.AddSingleton<IVideoData, SqlVideoData>();
+            services.AddIdentity<User, IdentityRole>();
 
         }
 
@@ -57,6 +60,7 @@ namespace AspNetCoreVideo
                 app.UseDeveloperExceptionPage();                
             }
 
+            app.UseIdentity();
             app.UseMvcWithDefaultRoute();
             //This is the last piece of middleware nothing excutes after .Run
             app.UseMvc(routes =>
